@@ -41,12 +41,12 @@ const NavBar = () => {
               </Link>
             </li>
             {pages.map(page=>(
-            <li>
+            <li key={page}>
               <Link
                 to={`/${page}`}
-                className="block px-5 text-light rounded md:hover:bg-transparent md:border-0 md:hover:text-deep md:p-0 tracking-widest"
+                className="block px-5 text-light rounded md:hover:bg-transparent md:border-0 md:hover:text-deep md:p-0 tracking-widest uppercase"
               >
-                {page.toUpperCase()}
+                {page}
               </Link>
             </li>
             ))}

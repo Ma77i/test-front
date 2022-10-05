@@ -51,8 +51,6 @@ const ItemDetailContainer = () => {
     getHotel(param.id);
   }, []);
 
-  console.log(item);
-
   if (isLoading) return <Loader />;
 
     return (

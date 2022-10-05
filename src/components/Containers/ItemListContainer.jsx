@@ -46,8 +46,6 @@ const ItemListContainer = () => {
     getHotels();
   }, []);
 
-  console.log(items);
-
   if (isLoading) return <Loader />;
 
   return (
