@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-
-  const pages = ["hotels", "contact"]
+  const pages = ["hotels", "contact"];
 
   return (
     <nav className=" px-2 sm:px-4 py-2.5 bg-dark">
@@ -40,15 +39,15 @@ const NavBar = () => {
                 HOME
               </Link>
             </li>
-            {pages.map(page=>(
-            <li key={page}>
-              <Link
-                to={`/${page}`}
-                className="block px-5 text-light rounded md:hover:bg-transparent md:border-0 md:hover:text-deep md:p-0 tracking-widest uppercase"
-              >
-                {page}
-              </Link>
-            </li>
+            {pages.map((page) => (
+              <li key={page}>
+                <Link
+                  to={`/${page}`}
+                  className="block px-5 text-light rounded md:hover:bg-transparent md:border-0 md:hover:text-deep md:p-0 tracking-widest uppercase"
+                >
+                  {page}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

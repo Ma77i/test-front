@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import ItemList from "../Items/ItemList";
 import API from "../../api";
@@ -27,7 +26,7 @@ const ItemListContainer = () => {
       const newHotels = {
         name: elem,
         address: address[index],
-        hotel_photos: photos[index],
+        hotel_photos: photos[index].split(", "),
         hotel_summary: summary[index],
         hotel_rating: rating[index],
         review_score: score[index],

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { GrLocation } from "react-icons/gr"
+import { GrLocation } from "react-icons/gr";
 
 const Item = ({ item }) => {
-  
-  const spanStyleOne = "text-black text-xs font-normal mr-1 px-2.5 py-0.5 rounded";
+  const spanStyleOne =
+    "text-black text-xs font-normal mr-1 px-2.5 py-0.5 rounded";
   const spanStyleTwo = "bg-deep p-1 rounded-lg text-light";
 
   return (
@@ -18,7 +18,9 @@ const Item = ({ item }) => {
           {item.name}
         </h4>
         <h6 className="flex text-sm font-medium tracking-normal text-gray-900">
-          <GrLocation />{"  "}{item.address}
+          <GrLocation />
+          {"  "}
+          {item.address}
         </h6>
         <div className="flex items-start rounded-full bg-light mt-2.5 mb-5 px-5 py-1">
           <span className={spanStyleOne}>

@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/Containers/ItemDetailContainer";
 import ItemListContainer from "./components/Containers/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import PageNotFound from "./pages/404/PageNotFound";
+import Hotels from "./pages/Hotels/Hotels";
 
 const App = () => {
   return (
@@ -12,8 +13,8 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/hotels" element={<ItemListContainer />} />
-        <Route path="/hotels/:id" element={<ItemDetailContainer />} />
+        <Route path="/hotels" element={<Hotels />} />
+        <Route path="/hotels/:id" element={<Hotels />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
