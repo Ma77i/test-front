@@ -1,15 +1,19 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import ItemList from "../Items/ItemList";
-import API from "../../api";
-import Loader from "../utils/Loader";
 
-const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+import API from '../../api';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "../Items/ItemDetail";
+import Loader from "../utils/Loader"
+
+
+const ItemDetailContainer = () => {
+
+  const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const param = useParams()
   const hotels = [];
 
-  const getHotels = async () => {
+  const getHotel = async (id) => {
     const res = await API.get();
     const data = res.data.hotels;
 
@@ -37,24 +41,25 @@ const ItemListContainer = () => {
       };
       hotels.push(newHotels);
     });
-    setItems(hotels);
+
+    setItem(hotels.find(hotel=>hotel.name === id));
     setIsLoading(false);
   };
 
   useEffect(() => {
     setIsLoading(true);
-    getHotels();
+    getHotel(param.id);
   }, []);
 
-  console.log(items);
+  console.log(item);
 
   if (isLoading) return <Loader />;
 
-  return (
-    <>
-      <ItemList items={items} />
-    </>
-  );
+    return (
+      <div className="flex flex-col items-center m-5">
+        <ItemDetail item={item} />
+      </div>
+    );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

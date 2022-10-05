@@ -1,11 +1,12 @@
 import PuffLoader from "react-spinners/PuffLoader"
 
-
-export default function SimpleBackdrop() {
+const SimpleBackdrop = () => {
 
   return (
-    <div className="flex flex-col justify-center align-middle m-10">
-      <PuffLoader size={250} />;
+    <div className="flex justify-center align-super m-10">
+      <PuffLoader size={400} />
     </div>
   );
 }
+
+export default SimpleBackdrop

@@ -2,17 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+
+  const pages = ["hotels", "contact"]
+
   return (
     <nav className=" px-2 sm:px-4 py-2.5 bg-dark">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <Link to="/" className="flex items-center text-3xl text-light">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQaSR0PKlHu1KlYQAZpxTJOOy60djlwqcqQ&usqp=CAU"
-            className="w-12"
-            alt="Hotels Logo"
-          />
-          Hotel's Room
-        </Link>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -31,36 +26,30 @@ const NavBar = () => {
               fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
               clipRule="evenodd"
-            ></path>
+            />
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="flex flex-col items-center p-4 mt-4  rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col items-center p-4 mt-4  rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-xl md:font-light md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <Link
                 to="/"
-                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:hover:text-[#8FE3CF]"
+                className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 md:hover:text-deep tracking-widest"
                 aria-current="page"
               >
-                Home
+                HOME
               </Link>
             </li>
+            {pages.map(page=>(
             <li>
               <Link
-                to="/hotels"
-                className="block px-5 text-[#fdea00] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#8FE3CF] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                to={`/${page}`}
+                className="block px-5 text-light rounded md:hover:bg-transparent md:border-0 md:hover:text-deep md:p-0 tracking-widest"
               >
-                Hotels
+                {page.toUpperCase()}
               </Link>
             </li>
-            <li>
-              <Link
-                to="/contact"
-                className="block py-2 pr-4 pl-3 text-[#fdea00] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#8FE3CF] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Contact
-              </Link>
-            </li>
+            ))}
           </ul>
         </div>
       </div>
