@@ -48,5 +48,6 @@ module.exports = {
         h3: { fontSize: theme("fontSize.2xl") },
       });
     }),
+    // require("@tailwindcss/forms"),
   ],
 };

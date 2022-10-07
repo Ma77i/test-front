@@ -97,8 +97,6 @@ export const HotelsProvider = ({ children }) => {
     return hotel.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  console.log("item", item);
-  console.log("items", items);
   const values = {
     getHotels,
     items,

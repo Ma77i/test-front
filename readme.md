@@ -1,6 +1,6 @@
 <h1 align="center"> Front-end exercise: Inmobana </h1>
 
-For this Front-end test I used [React](https://es.reactjs.org/) and [Vite](https://vitejs.dev/).
+For this Front-end test I used [React](https://es.reactjs.org/), [Vite](https://vitejs.dev/) and [TailwindCSS](https://tailwindcss.com).
 
 Try the demo [here](https://inmobana-test.netlify.app/)
 

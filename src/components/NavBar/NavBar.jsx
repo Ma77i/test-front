@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   const pages = ["hotels", "contact"];
@@ -52,7 +51,6 @@ const NavBar = () => {
             ))}
           </ul>
         </div>
-        <SearchBar />
       </div>
     </nav>
   );
