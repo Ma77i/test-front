@@ -1,6 +1,7 @@
 import Item from "./Item";
 
 const ItemList = ({ items }) => {
+
   if (!items) return <h1 className="text-center">No items to display</h1>;
 
   return (
