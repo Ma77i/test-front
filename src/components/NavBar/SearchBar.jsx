@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa"
+import { HotelsContext } from "../../context/HotelsContext";
 
 const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const {searchTerm, handleChangeSearch} = useContext(HotelsContext);
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+
 
   return (
     <div className="">
@@ -15,7 +14,7 @@ const SearchBar = () => {
         type="text"
         placeholder="Search"
         value={searchTerm}
-        onChange={handleChange}
+        onChange={handleChangeSearch}
       />
     </div>
   );
