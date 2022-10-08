@@ -2,7 +2,7 @@ import Item from "./Item";
 
 const ItemList = ({ items }) => {
 
-  if (!items) return <h1 className="text-center">No items to display</h1>;
+  if (!items.length) return <h1 className="text-center uppercase m-10 p-10 tracking-widest">No hotel found</h1>;
 
   return (
     <div className="flex flex-wrap justify-between m-5">

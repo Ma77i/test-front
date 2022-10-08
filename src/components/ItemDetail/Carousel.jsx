@@ -21,7 +21,7 @@ const Carousel = ({ images }) => {
           <div>
             {actualImage === index && (
               <img
-                className="pb-2 w-full h-96 rounded-t-lg"
+                className="pb-2 w-full xl:h-128 rounded-t-lg"
                 key={index}
                 src={imagen}
                 alt="imagen"

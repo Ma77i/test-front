@@ -6,7 +6,6 @@ export const HotelsContext = createContext();
 export const HotelsProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const hotels = [];
 
@@ -88,26 +87,14 @@ export const HotelsProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  // SEARCH BAR
-  const handleChangeSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const filteredHotels = hotels.filter((hotel) => {
-    return hotel.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
-
   const values = {
+    hotels,
     getHotels,
     items,
     item,
     setItems,
     isLoading,
     setIsLoading,
-    searchTerm,
-    setSearchTerm,
-    filteredHotels,
-    handleChangeSearch,
     getHotel
   };
 
