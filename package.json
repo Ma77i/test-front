@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Matias Silva",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",
+    "@heroicons/react": "^2.0.12",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

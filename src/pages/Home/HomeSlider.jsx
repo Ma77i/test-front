@@ -4,9 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
+import "swiper/css/lazy";
 
 // import required modules
-import { Scrollbar } from "swiper";
+import { Scrollbar, Lazy } from "swiper";
 import { Link } from "react-router-dom";
 import StarIcon from "../../components/Icons/StarIcon";
 import LocationIcon from "../../components/Icons/LocationIcon";
@@ -19,10 +20,11 @@ const HomeSlider = ({ items }) => {
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
+        lazy={true}
         scrollbar={{
-          hide: true,
+          hide: false,
         }}
-        modules={[Scrollbar]}
+        modules={[Scrollbar, Lazy]}
         className="w-full"
       >
         {items.map((item, index) => {
@@ -49,7 +51,7 @@ const HomeSlider = ({ items }) => {
                   </div>
                   <div className="flex pb-3 px-3">
                     <LocationIcon />
-                    <h6 className="flex text-md tracking-normal text-black px-1">
+                    <h6 className="flex font-light text-sm tracking-normal text-black px-1">
                       {item.address}
                     </h6>
                   </div>

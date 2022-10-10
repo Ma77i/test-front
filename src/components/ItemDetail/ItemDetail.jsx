@@ -1,5 +1,7 @@
 import { GrLocation } from "react-icons/gr";
 import Swal from "sweetalert2";
+import ItemSlider from "../Items/ItemSlider";
+import CardSlider from "./CardSlider";
 import Carousel from "./Carousel";
 
 const ItemDetail = ({ item }) => {
@@ -16,6 +18,7 @@ const ItemDetail = ({ item }) => {
   return (
     <div className="md:flex bg-white rounded-lg border border-light shadow-md m-10">
       <div className="xl:w-6/12 md:p-10">
+        {/* <CardSlider images={item.hotel_photos} /> */}
         <Carousel images={item.hotel_photos} />
       </div>
       <div className="flex flex-col md:w-6/12 p-10">

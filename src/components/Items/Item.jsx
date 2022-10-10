@@ -1,42 +1,50 @@
 import { Link } from "react-router-dom";
-import { GrLocation } from "react-icons/gr";
+import LocationIcon from "../Icons/LocationIcon";
+import StarIcon from "../Icons/StarIcon";
+import ItemSlider from "./ItemSlider";
 
 const Item = ({ item }) => {
-  const spanStyleOne =
-    "text-black text-xs font-normal mr-1 px-2.5 py-0.5 rounded";
-  const spanStyleTwo = "bg-deep p-1 rounded-lg text-light";
-
+  const euroSign = "\u20ac ";
   return (
-    <div className="w-full max-w-sm bg-white rounded-lg border-1 shadow-md m-2">
-      <img
+    <div className="w-full max-w-sm bg-white rounded-lg border-1 shadow-md my-2">
+      {/* <img
         className="pb-2 w-full h-60 rounded-t-lg"
         src={item.hotel_photos}
         alt="product image"
-      />
-      <div className="flex flex-col items-center px-5 pb-5 ">
-        <h4 className="text-xl font-semibold tracking-normal text-gray-900">
-          {item.name}
-        </h4>
-        <h6 className="flex text-sm font-medium tracking-normal text-gray-900">
-          <GrLocation />
-          {"  "}
-          {item.address}
-        </h6>
-        <div className="flex items-start rounded-full bg-light mt-2.5 mb-5 px-5 py-1">
-          <span className={spanStyleOne}>
-            Rate: <span className={spanStyleTwo}>{item.hotel_rating}</span>
-          </span>
-          <span className={spanStyleOne}>
-            Distance from downtown (km):{" "}
-            <span className={spanStyleTwo}>{item.distance_from_downtown}</span>
+      /> */}
+      <ItemSlider images={item.hotel_photos} />
+      <div className="flex flex-col pb-5 ">
+        <div className="flex w-full pb-3 px-3">
+          <h4 className="text-md font-bold tracking-wide text-black">
+            {item.name}
+          </h4>
+          <div className="flex justify-end px-3">
+            {" | "}
+            <StarIcon />
+            <p className="font-bold text-md px-1">{item.hotel_rating}</p>
+          </div>
+        </div>
+        <div className="flex pb-3 px-3">
+          <LocationIcon />
+          <h6 className="flex text-sm font-light tracking-normal text-black px-1">
+            {item.address}
+          </h6>
+        </div>
+        <div className="flex items-start px-4 pb-3">
+          <span className="text-md font-bold text-black">
+            {euroSign}
+            {item.avg_price_per_night}{" "}
+            <span className="text-black font-light text-sm"> | Per night</span>
           </span>
         </div>
+        <div className="relative flex w-full justify-center items-end">
         <Link
           to={`/hotels/${item.name}`}
           className="bg-deep hover:bg-dark text-light text-center rounded-full w-40 px-5 py-2"
         >
           Read more
         </Link>
+        </div>
       </div>
     </div>
   );

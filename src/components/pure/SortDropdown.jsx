@@ -1,10 +1,50 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { HotelsContext } from "../../context/HotelsContext";
 
 const SortDropdown = () => {
+  const { items, setItems } = useContext(HotelsContext);
+  const navigate = useNavigate()
+
+  const sortByPriceHigh = () => {
+    const sortBy = items.sort(
+      (a, b) => b.avg_price_per_night - a.avg_price_per_night
+      );
+      console.log("SORT BY P HtoL", sortBy);
+    setItems(sortBy);
+    navigate("/hotels")
+  };
+
+  const sortByPriceLow = () => {
+    console.log("PRICE LOW");
+    const sortBy = items.sort(
+      (a, b) => a.avg_price_per_night - b.avg_price_per_night
+    );
+    setItems(sortBy);
+    console.log("After", items);
+    navigate("/hotels");
+  };
+
+  const sortByRating = () => {
+    console.log("RATING");
+    const sortBy = items.sort(
+      (a, b) => b.hotel_rating - a.hotel_rating
+    );
+    setItems(sortBy);
+    navigate("/hotels");
+  };
+
+  const sortByReview = () => {
+    console.log("REVIEW");
+    const sortBy = items.sort((a, b) => b.review_score - a.review_score);
+    setItems(sortBy);
+    navigate("/hotels");
+  };
+
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="flex items-center border border-light shadow-md hover:shadow-lg rounded-full px-5 py-3 mx-3 text-xl">
+      <Menu.Button className="flex items-center border border-light shadow-md hover:shadow-lg rounded-full px-5 py-3 text-xl">
         Sort{" "}
         <svg
           className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -34,8 +74,9 @@ const SortDropdown = () => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={sortByPriceHigh}
                   className={`${
-                    active ? "bg-violet-500 text-white" : "text-gray-900"
+                    active ? "bg-violet-500 text-black" : "text-grey"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                 >
                   {/* {active ? (
@@ -49,7 +90,43 @@ const SortDropdown = () => {
                       aria-hidden="true"
                     />
                   )} */}
-                  Edit
+                  By Price <span className="font-extralight"> (High to Low)</span>
+                </button>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  onClick={sortByPriceLow}
+                  className={`${
+                    active ? "bg-violet-500 text-black" : "text-grey"
+                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                >
+                  By Price <span className="font-extralight"> (Low to High)</span>
+                </button>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  onClick={sortByRating}
+                  className={`${
+                    active ? "bg-violet-500 text-black" : "text-grey"
+                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                >
+                  By Rating
+                </button>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  onClick={sortByReview}
+                  className={`${
+                    active ? "bg-violet-500 text-black" : "text-grey"
+                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                >
+                  By Review Score
                 </button>
               )}
             </Menu.Item>
@@ -58,6 +135,6 @@ const SortDropdown = () => {
       </Transition>
     </Menu>
   );
-}
+};
 
 export default SortDropdown;

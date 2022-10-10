@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
-import { FaSearch } from "react-icons/fa";
 import { HotelsContext } from "../../context/HotelsContext";
 import SearchIcon from "../Icons/SearchIcon";
-import ItemList from "../Items/ItemList"
+import ItemList from "../Items/ItemList";
+import SelectOrigin from "./SelectOrigin";
+import SelectSort from "./SelectSort";
+import SortDropdown from "./SortDropdown";
 
 const SearchBar = () => {
   const { items, setItems, getHotels } = useContext(HotelsContext);
@@ -10,30 +12,24 @@ const SearchBar = () => {
   const [searchName, setSearchName] = useState("");
   const [searchAddress, setSearchAddress] = useState("");
 
-  // SEARCH BAR
-  const handleChangeSearchName = (event) => {
-    setSearchName(event.target.value);
+  const handleChangeSearchName = (e) => {
+    setSearchName(e.target.value);
 
-    if (event.target.value === "") {
-      getHotels();
-    }
+    if (e.target.value === "") getHotels();
 
     const filteredHotels = items.filter((hotel) => {
       return hotel.name.toLowerCase().includes(searchName.toLowerCase());
     });
 
-    if (!filteredHotels.lenght) {
-      setItems([])
-    }
+    if (!filteredHotels.lenght) setItems([]);
 
     setItems(filteredHotels);
-
   };
 
-  const handleChangeSearchAddress = (event) => {
-    setSearchAddress(event.target.value);
+  const handleChangeSearchAddress = (e) => {
+    setSearchAddress(e.target.value);
 
-    if (event.target.value === "") {
+    if (e.target.value === "") {
       getHotels();
     }
 
@@ -42,7 +38,7 @@ const SearchBar = () => {
     });
 
     if (!filteredHotels.lenght) {
-      setItems([])
+      setItems([]);
     }
 
     setItems(filteredHotels);
@@ -57,18 +53,23 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex mx-5">
-      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5">
+    <div className="flex mx-2">
+      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 mx-2">
         <button className="flex items-center m-3" onClick={handleClick}>
           <SearchIcon />
         </button>
         <input
-          className="mx-3 focus:outline-none text-xl tracking-wider"
+          className="mx-3 focus:outline-none text-xl tracking-wider "
           type="text"
           placeholder="Name"
           value={searchName}
           onChange={handleChangeSearchName}
         />
+      </div>
+      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 mx-2">
+        <button className="flex items-center m-3" onClick={handleClick}>
+          <SearchIcon />
+        </button>
         <input
           className="mx-3 focus:outline-none text-xl tracking-wider"
           type="text"
@@ -77,6 +78,9 @@ const SearchBar = () => {
           onChange={handleChangeSearchAddress}
         />
       </div>
+      {/* <SortDropdown /> */}
+      <SelectOrigin items={items} setItems={setItems} getHotels={getHotels} />
+      <SelectSort items={items} setItems={setItems} getHotels={getHotels} />
     </div>
   );
 };

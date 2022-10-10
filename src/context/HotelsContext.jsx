@@ -47,7 +47,7 @@ export const HotelsProvider = ({ children }) => {
   
   useEffect(() => {
     setIsLoading(true);
-    getHotels();
+    if (!hotels.length) {getHotels();}
   }, []);
 
   const getHotel = async (id) => {

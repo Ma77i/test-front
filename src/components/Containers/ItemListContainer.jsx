@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { HotelsContext } from "../../context/HotelsContext";
 import SearchBar from "../pure/SearchBar";
 import SortDropdown from "../pure/SortDropdown";
+import FilterBox from "../pure/FilterBox";
+import SelectOrigin from "../pure/SelectOrigin";
 
 const ItemListContainer = () => {
 
@@ -18,7 +20,7 @@ const ItemListContainer = () => {
         </h2>
       <div className="container flex justify-center mx-auto">
         <SearchBar />
-        <SortDropdown />
+        {/* <FilterBox /> */}
       </div>
       <ItemList items={items} />
     </div>
