@@ -11,8 +11,7 @@ const SelectSort = ({ items, setItems }) => {
   const handleChangeSelect = (e) => {
     setSelectSort(e.target.value);
   };
-  
-  
+
   useEffect(() => {
 
     if (selectSort === "priceHigh") {

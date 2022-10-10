@@ -1,24 +1,22 @@
 import { GrLocation } from "react-icons/gr";
 import Swal from "sweetalert2";
-import ItemSlider from "../Items/ItemSlider";
-import CardSlider from "./CardSlider";
 import Carousel from "./Carousel";
 
+const euroSign = "\u20ac ";
+
+const spanStyleOne =
+  "text-black text-xs md:text-sm font-semibold mr-2 pr-2.5 py-0.5 rounded";
+const spanStyleTwo = "bg-dark py-1 px-2 rounded-lg text-light";
+
 const ItemDetail = ({ item }) => {
-  const spanStyleOne =
-    "text-black text-xs md:text-sm font-semibold mr-2 pr-2.5 py-0.5 rounded";
-  const spanStyleTwo = "bg-dark py-1 px-2 rounded-lg text-light";
 
   const handleReserve = () => {
     Swal.fire("Good job!", "You reserve was succesfully received!", "success");
   };
 
-  const euroSign = "\u20ac ";
-
   return (
     <div className="md:flex bg-white rounded-lg border border-light shadow-md m-10">
       <div className="xl:w-6/12 md:p-10">
-        {/* <CardSlider images={item.hotel_photos} /> */}
         <Carousel images={item.hotel_photos} />
       </div>
       <div className="flex flex-col md:w-6/12 p-10">

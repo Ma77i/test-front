@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const pages = ["hotels", "contact"];
+
 const NavBar = () => {
-  const pages = ["hotels", "contact"];
 
   return (
     <nav className=" px-2 sm:px-4 py-2.5 bg-dark">

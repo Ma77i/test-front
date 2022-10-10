@@ -3,15 +3,11 @@ import LocationIcon from "../Icons/LocationIcon";
 import StarIcon from "../Icons/StarIcon";
 import ItemSlider from "./ItemSlider";
 
+const euroSign = "\u20ac ";
+
 const Item = ({ item }) => {
-  const euroSign = "\u20ac ";
   return (
     <div className="w-full max-w-sm bg-white rounded-lg border-1 shadow-md my-2">
-      {/* <img
-        className="pb-2 w-full h-60 rounded-t-lg"
-        src={item.hotel_photos}
-        alt="product image"
-      /> */}
       <ItemSlider images={item.hotel_photos} />
       <div className="flex flex-col pb-5 ">
         <div className="flex w-full pb-3 px-3">

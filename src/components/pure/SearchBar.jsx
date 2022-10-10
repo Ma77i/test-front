@@ -1,10 +1,8 @@
 import { useContext, useState } from "react";
 import { HotelsContext } from "../../context/HotelsContext";
 import SearchIcon from "../Icons/SearchIcon";
-import ItemList from "../Items/ItemList";
 import SelectOrigin from "./SelectOrigin";
 import SelectSort from "./SelectSort";
-import SortDropdown from "./SortDropdown";
 
 const SearchBar = () => {
   const { items, setItems, getHotels } = useContext(HotelsContext);
@@ -78,7 +76,6 @@ const SearchBar = () => {
           onChange={handleChangeSearchAddress}
         />
       </div>
-      {/* <SortDropdown /> */}
       <SelectOrigin items={items} setItems={setItems} getHotels={getHotels} />
       <SelectSort items={items} setItems={setItems} getHotels={getHotels} />
     </div>

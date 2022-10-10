@@ -20,7 +20,6 @@ const ItemListContainer = () => {
         </h2>
       <div className="container flex justify-center mx-auto">
         <SearchBar />
-        {/* <FilterBox /> */}
       </div>
       <ItemList items={items} />
     </div>

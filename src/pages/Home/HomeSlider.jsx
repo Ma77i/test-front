@@ -12,8 +12,9 @@ import { Link } from "react-router-dom";
 import StarIcon from "../../components/Icons/StarIcon";
 import LocationIcon from "../../components/Icons/LocationIcon";
 
+const euroSign = "\u20ac ";
+
 const HomeSlider = ({ items }) => {
-  const euroSign = "\u20ac ";
 
   return (
     <div className="w-10/12 p-5 border border-light shadow-lg rounded-xl">
