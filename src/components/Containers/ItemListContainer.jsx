@@ -12,7 +12,7 @@ const ItemListContainer = () => {
       <h3 className="hidden md:flex text-center uppercase tracking-widest m-3">
         Find the best hotel for yourself!
       </h3>
-      <div className="bg-white md:sticky top-16 z-[100] rounded-full flex justify-center mx-auto">
+      <div className="bg-white md:sticky top-16 z-[80] rounded-full flex justify-center mx-auto">
         <SearchBar />
       </div>
       <ItemList items={items} isLoading={isLoading} />

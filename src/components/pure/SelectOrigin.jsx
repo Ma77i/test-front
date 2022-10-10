@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const optionStyles =
-  "text-black text-md hover:text-grey";
+  "text-black text-xl hover:text-grey";
 
 const SelectOrigin = ({ items, setItems, getHotels }) => {
   const [selectOrigin, setSelectOrigin] = useState("");
@@ -20,9 +20,9 @@ const SelectOrigin = ({ items, setItems, getHotels }) => {
   };
 
   return (
-    <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
+    <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-2 m-2">
       <select
-        className="mx-3 focus:outline-none text-xl tracking-wider"
+        className="mx-3 focus:outline-none text-md tracking-wider"
         placeholder="Origin"
         value={selectOrigin}
         onChange={handleChangeSelect}

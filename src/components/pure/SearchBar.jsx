@@ -52,24 +52,24 @@ const SearchBar = () => {
 
   return (
     <div className="flex flex-col md:flex-row mx-2">
-      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
+      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-2 m-2">
         <button className="flex items-center m-3" onClick={handleClick}>
           <SearchIcon />
         </button>
         <input
-          className="mx-3 focus:outline-none text-xl tracking-wider "
+          className="mx-3 focus:outline-none text-md tracking-wider "
           type="text"
           placeholder="Name"
           value={searchName}
           onChange={handleChangeSearchName}
         />
       </div>
-      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
+      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-2 m-2">
         <button className="flex items-center m-3" onClick={handleClick}>
           <SearchIcon />
         </button>
         <input
-          className="mx-3 focus:outline-none text-xl tracking-wider"
+          className="mx-3 focus:outline-none text-md tracking-wider"
           type="text"
           placeholder="Address"
           value={searchAddress}

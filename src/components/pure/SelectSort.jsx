@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const optionStyles = "text-black text-md hover:text-grey";
+const optionStyles = "text-black text-xl hover:text-grey";
 
 const SelectSort = ({ items, setItems }) => {
   const [selectSort, setSelectSort] = useState("");
@@ -47,9 +47,9 @@ const SelectSort = ({ items, setItems }) => {
   }, [selectSort]);
 
   return (
-    <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
+    <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-2 m-2">
       <select
-        className="mx-3 focus:outline-none text-xl tracking-wider"
+        className="mx-3 focus:outline-none text-md tracking-wider"
         placeholder="Origin"
         value={selectSort}
         onChange={handleChangeSelect}
