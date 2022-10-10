@@ -20,7 +20,7 @@ const SelectOrigin = ({ items, setItems, getHotels }) => {
   };
 
   return (
-    <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 mx-2">
+    <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
       <select
         className="mx-3 focus:outline-none text-xl tracking-wider"
         placeholder="Origin"

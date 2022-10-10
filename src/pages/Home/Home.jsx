@@ -12,7 +12,12 @@ const Home = () => {
   
   return (
     <div className="flex flex-col items-center m-5">
-      <h1 className="tracking-widest">WELCOME TO <span className="font-black animate-pulse hover:animate-ping text-deep ">INMOBANA</span></h1>
+      <span className="text-4xl md:text-8xl text-center uppercase tracking-widest">
+        WELCOME TO{" "}
+      </span>
+      <h1 className="text-6xl md:text-8xl font-black animate-pulse hover:animate-ping text-deep">
+        INMOBANA
+      </h1>
       <HomeSlider items={items} />
     </div>
   );

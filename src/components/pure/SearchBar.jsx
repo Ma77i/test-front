@@ -51,8 +51,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex mx-2">
-      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 mx-2">
+    <div className="flex flex-col md:flex-row mx-2">
+      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
         <button className="flex items-center m-3" onClick={handleClick}>
           <SearchIcon />
         </button>
@@ -64,7 +64,7 @@ const SearchBar = () => {
           onChange={handleChangeSearchName}
         />
       </div>
-      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 mx-2">
+      <div className="flex rounded-full border border-light shadow-md hover:shadow-lg px-5 m-2">
         <button className="flex items-center m-3" onClick={handleClick}>
           <SearchIcon />
         </button>

@@ -26,7 +26,7 @@ const HomeSlider = ({ items }) => {
           hide: false,
         }}
         modules={[Scrollbar, Lazy]}
-        className="w-full"
+        className="hidden md:flex w-full "
       >
         {items.map((item, index) => {
           return (
@@ -70,7 +70,7 @@ const HomeSlider = ({ items }) => {
         })}
       </Swiper>
       <div className="flex flex-col items-center">
-        <h3 className="uppercase tracking-wider">
+        <h3 className="uppercase tracking-wider text-center">
           Checkout all available hotels
         </h3>
         <Link
