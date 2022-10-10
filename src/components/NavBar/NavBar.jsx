@@ -5,7 +5,7 @@ const pages = ["hotels", "contact"];
 
 const NavBar = () => {
   return (
-    <nav className=" px-2 sm:px-4 py-2.5 bg-dark">
+    <nav className="sticky top-0 z-[100] px-2 sm:px-4 bg-dark">
       <div className="container flex flex-wrap justify-center items-center mx-auto">
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col items-center p-4 mt-4  rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-xl md:font-light md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">

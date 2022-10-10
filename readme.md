@@ -1,4 +1,5 @@
 <h1 align="center"> Front-end exercise: Inmobana </h1>
+<img src="/image.png" alt="screenshot" />
 
 For this Front-end test I used [React](https://es.reactjs.org/), [Vite](https://vitejs.dev/) and [TailwindCSS](https://tailwindcss.com).
 

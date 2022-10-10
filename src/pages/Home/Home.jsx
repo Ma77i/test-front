@@ -12,7 +12,7 @@ const Home = () => {
   
   return (
     <div className="flex flex-col items-center m-5">
-      <span className="text-4xl md:text-8xl text-center uppercase tracking-widest">
+      <span className="text-4xl md:text-6xl text-center uppercase tracking-widest">
         WELCOME TO{" "}
       </span>
       <h1 className="text-6xl md:text-8xl font-black animate-pulse hover:animate-ping text-deep">
