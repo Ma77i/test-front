@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const pages = ["hotels", "contact"];
 
 const NavBar = () => {
-
   return (
     <nav className=" px-2 sm:px-4 py-2.5 bg-dark">
       <div className="container flex flex-wrap justify-center items-center mx-auto">
@@ -32,10 +31,7 @@ const NavBar = () => {
           </ul>
         </div>
         <Link to="/">
-
-      <h1 className="text-4xl md:hidden font-black text-deep">
-        INMOBANA
-      </h1>
+          <h1 className="text-4xl md:hidden font-black text-deep">INMOBANA</h1>
         </Link>
       </div>
     </nav>

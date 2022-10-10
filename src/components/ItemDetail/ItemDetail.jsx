@@ -56,7 +56,7 @@ const ItemDetail = ({ item }) => {
           <div className="flex flex-col items-end md:items-start w-6/12 my-5">
             <button
               onClick={handleReserve}
-              className="bg-deep hover:bg-dark px-10 py-2 rounded-full text-light "
+              className="bg-deep hover:bg-dark px-10 py-2 rounded-full text-light uppercase transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
             >
               Reserve
             </button>
